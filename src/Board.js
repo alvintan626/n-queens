@@ -43,6 +43,7 @@
 
     hasAnyQueenConflictsOn: function(rowIndex, colIndex) {
       return (
+        
         this.hasRowConflictAt(rowIndex) ||
         this.hasColConflictAt(colIndex) ||
         this.hasMajorDiagonalConflictAt(this._getFirstRowColumnIndexForMajorDiagonalOn(rowIndex, colIndex)) ||
@@ -133,8 +134,6 @@
       return false; // fixme
     },
 
-
-
     // Major Diagonals - go from top-left to bottom-right
     // --------------------------------------------------------------
     //
@@ -145,7 +144,7 @@
       var arrayCounter = 0;
       var columnIndex = majorDiagonalColumnIndexAtFirstRow;
       
-        if ( columnIndex === rows[0].length - 1) return false;  
+        
 
         while ( arrayCounter < rows.length && columnIndex < rows.length){
           if ( rows[arrayCounter][columnIndex] === 1 ) {
@@ -187,9 +186,6 @@
       var columnIndex = minorDiagonalColumnIndexAtFirstRow;
       var acc = 0;
 
-      if (rows[0][0]) return false;
-
-      debugger;
       while (arrayCounter < rows.length && columnIndex >= 0){
         if(rows[arrayCounter][columnIndex] === 1){
           acc += 1;
